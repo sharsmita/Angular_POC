@@ -1,0 +1,51 @@
+
+
+       
+       <div class="container">
+         <div class="row"><p></p></div>
+          <div class="row">
+                <ngb-alert [dismissible]="true">
+                  <strong>Warning!</strong> This is an alert!The broadcast messages will go here.
+                </ngb-alert>
+           </div>
+         
+               <div id="parent_div_1">
+                <div class="row" >
+                  <div class="col-md-12 text-center">
+                  <b>PoC Summary</b>
+                </div>
+                </div>
+                <br>
+                 <div class="row">
+                    <div class="col-md-6 text-center">
+                      <span><b>Total PoCs</b></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span>100</span>
+                    </div>
+                 </div>
+                 
+                 <div class="row">
+                    <div class="col-md-6 text-center">
+                      <span><b>Completed PoCs</b></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span>50</span>
+                        <p><ngb-progressbar type="success" [value]="50"></ngb-progressbar></p>
+                    </div>
+                 </div>
+                 
+                 <div class="row">
+                    <div class="col-md-6 text-center">
+                      <span><b>Pending PoCs</b></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span>30</span>
+                        <p><ngb-progressbar type="info" [value]="30"></ngb-progressbar></p>
+                    </div>
+                 </div>
+                 
+
+               </div>
+               <div id="parent_div_2" class="parent_div_2"></div>
+        </div>         

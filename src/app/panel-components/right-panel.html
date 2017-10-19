@@ -1,0 +1,34 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container" >
+  
+        <ngb-tabset>
+          <ngb-tab>
+           <ng-template ngbTabTitle><a [routerLink]= "['dashboard']"><b>Dashboard</b></a> </ng-template> 
+        <!-- <ng-template ngbTabTitle><a routerLink="/tab-components/dashboard"><b>Dashboard</b></a> </ng-template> -->
+            <ng-template ngbTabContent >
+               <router-outlet></router-outlet> 
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab> 
+            <ng-template ngbTabTitle><b>SLA</b> </ng-template>
+            <ng-template ngbTabContent>
+              <p>This is the content of the second tab!</p>
+              <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar></p>
+              <p><ngb-progressbar type="info" [value]="50"></ngb-progressbar></p>
+              <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar></p>
+              <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar></p>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab  [disabled]="false">
+              <ng-template ngbTabTitle><b>TAS</b> </ng-template>
+              <ng-template ngbTabContent>
+                <p>This is the content of the reports tab!</p>
+                <ngb-alert [dismissible]="true">
+                  <strong>Warning!</strong> This is an alert!
+                </ngb-alert>
+              </ng-template>
+          </ngb-tab>
+    </ngb-tabset>
+  
+</div>
