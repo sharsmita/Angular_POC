@@ -4,7 +4,7 @@
   
         <ngb-tabset>
           <ngb-tab>
-           <ng-template ngbTabTitle><a [routerLink]= "['dashboard']"><b>Dashboard</b></a> </ng-template> 
+           <ng-template ngbTabTitle><a [routerLink]= "['dashboard']"><b>Summary</b></a> </ng-template> 
         <!-- <ng-template ngbTabTitle><a routerLink="/tab-components/dashboard"><b>Dashboard</b></a> </ng-template> -->
             <ng-template ngbTabContent >
                <router-outlet></router-outlet> 
@@ -14,14 +14,27 @@
             <ng-template ngbTabTitle><b>SLA</b> </ng-template>
             <ng-template ngbTabContent>
               <p>This is the content of the second tab!</p>
-              <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar></p>
-              <p><ngb-progressbar type="info" [value]="50"></ngb-progressbar></p>
-              <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar></p>
-              <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar></p>
+              <br>
+              <div ngbDropdown>
+                  <button class="btn" ngbDropdownToggle>Customers</button>
+                  <div class="dropdown-menu">
+                    <button class="dropdown-item"  >AA</button>
+                    <button class="dropdown-item"  >Shoppers Stop</button>
+                    <button class="dropdown-item"  >Westpac Bank</button>
+                  </div>
+                </div>
+
+                <br>
+                <div>
+                    <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar>Completed</p>
+                    <p><ngb-progressbar type="info" [value]="50"></ngb-progressbar>In Progress</p>
+                    <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar>Pending</p>
+                    <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar>Pending after SLA</p>
+                </div>
             </ng-template>
           </ngb-tab>
           <ngb-tab  [disabled]="false">
-              <ng-template ngbTabTitle><b>TAS</b> </ng-template>
+              <ng-template ngbTabTitle><b>Graphs</b> </ng-template>
               <ng-template ngbTabContent>
                 <p>This is the content of the reports tab!</p>
                 <ngb-alert [dismissible]="true">
