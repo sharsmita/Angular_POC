@@ -4,7 +4,7 @@
   
         <ngb-tabset>
           <ngb-tab>
-           <ng-template ngbTabTitle><a [routerLink]= "['dashboard']"><b>Summary</b></a> </ng-template> 
+           <ng-template ngbTabTitle><a [routerLink]= "['dashboard']"><b>Dashboard</b></a> </ng-template> 
         <!-- <ng-template ngbTabTitle><a routerLink="/tab-components/dashboard"><b>Dashboard</b></a> </ng-template> -->
             <ng-template ngbTabContent >
                <router-outlet></router-outlet> 
@@ -13,17 +13,79 @@
           <ngb-tab> 
             <ng-template ngbTabTitle><b>SLA</b> </ng-template>
             <ng-template ngbTabContent>
-              <p>This is the content of the second tab!</p>
-              <br>
-              <div ngbDropdown>
-                  <button class="btn" ngbDropdownToggle>Customers</button>
-                  <div class="dropdown-menu">
-                    <button class="dropdown-item"  >AA</button>
-                    <button class="dropdown-item"  >Shoppers Stop</button>
-                    <button class="dropdown-item"  >Westpac Bank</button>
-                  </div>
+             <div class="row" style="border-width:2em; border-color:#c9dbec">
+               <div class="col-md-12" style="border:1px solid #a7b2d4;display:inline-block" >
+                  <img id="Sla_logo" src="..\..\assets\images\lastscannedclock.png"><b> SLA</b>
+                  <br>
+               </div>
+            </div> 
+            <div class="row" style ="height:400px">
+                <div class="col-md-2" style=" background-color:#f1f4f7;border:1px solid rgb(167, 178, 212)" >
+                    <div class="container">
+                        <div class="row"><p></p></div>
+
+                            <nav class="navbar navbar-fixed-top navbar-dark"> 
+                                    <ul class="nav navbar-nav">  
+                                       <li class="nav-item">
+                                            <a class="nav-link" href="#">POC</a>
+                                       </li>
+                                       
+                                       <li class="nav-item">
+                                            <a class="nav-link" href="#">Tickets</a>
+                                       </li>
+                                       
+                                       <li class="nav-item">
+                                            <a class="nav-link" href="#">Custom Rules</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="#">Service Request</a>
+                                     </li>
+                                    
+                                    </ul>
+                                 </nav>
+                          
+                    </div>
+                </div>
+                <div class="col-md-10" style="border:1px solid rgb(167, 178, 212)" >
+                  <span> <h4 style="color:rgb(167, 178, 212)">POC</h4></span>
+                  <br>
+                  <div >
+                    <div style="width:40%">
+                    <div ngbDropdown style="float:right">
+                        <button class="btn" ngbDropdownToggle>Status</button>
+                        <div class="dropdown-menu">
+                          <button class="dropdown-item"  >Completed</button>
+                          <button class="dropdown-item"  >Pending </button>
+                          <button class="dropdown-item"  >Overdue</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="width:60%" >
+                        <div ngbDropdown style="float:left">
+                            <button class="btn" ngbDropdownToggle>Service type</button>
+                            <div class="dropdown-menu">
+                              <button class="dropdown-item"  >AA</button>
+                              <button class="dropdown-item"  >POC</button>
+                              <button class="dropdown-item"  >Custom rules</button>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
                 </div>
 
+             </div> 
+             
+             
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab  [disabled]="false">
+              <ng-template ngbTabTitle><b>TAS</b> </ng-template>
+              <ng-template ngbTabContent>
+                <p>This is the content of the reports tab!</p>
+                <ngb-alert [dismissible]="true">
+                  <strong>Warning!</strong> This is an alert!
+                </ngb-alert>
+                
                 <br>
                 <div>
                     <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar>Completed</p>
@@ -31,10 +93,20 @@
                     <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar>Pending</p>
                     <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar>Pending after SLA</p>
                 </div>
-            </ng-template>
+
+              </ng-template>
           </ngb-tab>
           <ngb-tab  [disabled]="false">
-              <ng-template ngbTabTitle><b>Graphs</b> </ng-template>
+              <ng-template ngbTabTitle><b>WAS</b> </ng-template>
+              <ng-template ngbTabContent>
+                <p>This is the content of the reports tab!</p>
+                <ngb-alert [dismissible]="true">
+                  <strong>Warning!</strong> This is an alert!
+                </ngb-alert>
+              </ng-template>
+          </ngb-tab>
+          <ngb-tab  [disabled]="false">
+              <ng-template ngbTabTitle><b>Customer</b> </ng-template>
               <ng-template ngbTabContent>
                 <p>This is the content of the reports tab!</p>
                 <ngb-alert [dismissible]="true">

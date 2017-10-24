@@ -1,13 +1,23 @@
 
   <div class="row">
       <div class="col-md-9">
-                     
-                    <span><img id="logo" src="..\..\assets\images\Indus_Face_logo.png"></span>
+        <!--  <span><img id="logo" src="..\..\assets\images\logo_powerby.png"></span>-->
+                   <span><img id="logo" src="..\..\assets\images\Indus_Face_logo.png"></span>
                     <span class="header_text">SLA-Portal</span>
           </div>
           <div class="col-md-3 profile_div_1" >
                         
-                <div class="profile_div" ><img id="user" src="..\..\assets\images\user.PNG" style=" cursor: pointer; cursor: hand;"></div>
+                <div class="profile_div" >
+                    <a id="dropdownAvatar" class="dropdown-toggle avatar" data-toggle="dropdown" (click)="logoutDDfun()">
+                  <img id="user" src="..\..\assets\images\user.PNG" style=" cursor: pointer; cursor: hand;"><b>Administrator</b>
+                </a>
+                <!--
+                <ul id="subMenuId" style="z-index:12;position:absolute;right:10px;top:55px;background:#fff;list-style-type:none;width:250px;" (mouseleave)="logoutDDfun()" > 
+                    <li >Account Details</li>
+                    <li >Logout</li>
+                 </ul>
+                -->
+                </div>
           </div>            
              
         </div>
