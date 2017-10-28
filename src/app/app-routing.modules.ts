@@ -8,7 +8,7 @@ import { HeaderPanelComponent } from '../app/panel-components/header.panel.compo
 const routes: Routes = [
   
   { path:'dashboard',component:DashboardComponent},
-  { path:'',redirectTo:'login',pathMatch:'full'},
+  { path:'',redirectTo:'dashboard',pathMatch:'full'},
   { path:'**',redirectTo:'login',pathMatch:'full'}
   // {
   //   path: '',

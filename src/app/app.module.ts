@@ -8,6 +8,8 @@ import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {DashboardComponent} from '../app/tab-components/dashboard/dashboard.component';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {DashboardComponent} from '../app/tab-components/dashboard/dashboard.comp
   
   imports: [
     BrowserModule,NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
