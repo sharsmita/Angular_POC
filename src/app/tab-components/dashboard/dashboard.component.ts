@@ -16,10 +16,11 @@ export class DashboardComponent {
         console.log("this is the constructor");
      //   helloWorld();
         this.callApi();
-     
+        this.callPortalApi();
     }
     url:any;
     ip:any;
+    loggedInUser:any;
 
     callApi(){
         console.log("-------- inside callApi-----------------");
@@ -33,6 +34,23 @@ export class DashboardComponent {
            
         },
         error=>console.log("error........")
+    );
+    }
+    callPortalApi(){
+        console.log("-------- inside callPortalApi-----------------");
+    let url = "http://localhost:8888/test/website";
+    
+        this.http.get(url).map((res: Response) => res.json())
+          .subscribe(
+          data => {
+              console.log("---- portal call working....",JSON.stringify(data));
+              console.log("---login id---bis==>>",JSON.stringify(data.data.loggedInUser["loginId"]));
+              this.loggedInUser = data.data.loggedInUser["loginId"];
+           // this.loggedInUser= JSON.stringify(data);
+           
+        },
+        error=>console.log("error........")
+    
     );
     }
 
