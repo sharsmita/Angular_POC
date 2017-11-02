@@ -8,6 +8,11 @@ import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {DashboardComponent} from '../app/tab-components/dashboard/dashboard.component';
+import {PocComponent} from '../app/tab-components/poc/poc.component';
+import {CustomerComponent} from '../app/tab-components/customer/customer.component';
+import { TasComponent } from '../app/tab-components/tas/tas.component';
+import { WasComponent } from '../app/tab-components/was/was.component';
+
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
@@ -17,8 +22,11 @@ import { HttpModule } from '@angular/http';
     LeftPanelComponent,
     RightPanelComponent,
     HeaderPanelComponent,
-    DashboardComponent
-
+    DashboardComponent,
+    PocComponent,
+    CustomerComponent,
+    TasComponent,
+    WasComponent
   //  MaterialModule.forRoot()
   ],
   

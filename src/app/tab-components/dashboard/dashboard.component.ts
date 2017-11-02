@@ -54,4 +54,7 @@ export class DashboardComponent {
     );
     }
 
+    rediretPoc(){
+        this.router.navigate(["/poc"]);
+    }
 }

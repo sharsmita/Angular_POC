@@ -11,178 +11,29 @@
             </ng-template>
           </ngb-tab>
           <ngb-tab> 
-            <ng-template ngbTabTitle><b>POC</b> </ng-template>
+          <!--  <ng-template ngbTabTitle><a [routerLink]="['poc']"></a><b>POC</b> </ng-template> -->
+            <ng-template ngbTabTitle><a routerLink="/poc"><b>POC</b></a> </ng-template>
             <ng-template ngbTabContent>
-             <div class="row" style="border-width:2em; border-color:#c9dbec">
-               <div class="col-md-12" style="border:1px solid #a7b2d4;display:inline-block" >
-                  <img id="Sla_logo" src="..\..\assets\images\lastscannedclock.png"><b> POC</b>
-                  <br>
-               </div>
-            </div> 
-            <div class="row" style ="height:400px">
-                <div class="col-md-2" style=" background-color:#f1f4f7;border:1px solid rgb(167, 178, 212);height:400px"  >
-                    <br>
-                    <br>
-                      <div class="list-group">
-                        <a href="#" class="list-group-item active">First item</a>
-                        <a href="#" class="list-group-item">Second item</a>
-                        <a href="#" class="list-group-item">Third item</a>
-                        <a href="#" class="list-group-item">Fourth item</a>
-                      </div>
-                                                             
-                </div>
-                <div class="col-md-10" style="border:1px solid rgb(167, 178, 212)" >
-                  <!--
-                  <span> <h4 style="color:rgb(167, 178, 212)">POC</h4></span>
-                  -->
-                  <!--bread crumbs-->
-                  <div class="row">
-                    <div class="col-md-12">
-                       <ol class="breadcrumb">
-                         <li class="active"> <h4 style="color:rgb(167, 178, 212)">POC/First Item</h4></li>        
-                       </ol>
-                 </div>
-                 
-                 </div> 
-         
-                  <br>
-                  <div class="row">
-                   <!-- <div style="width:40%"> -->
-                     <div class="col-md-6">
-                       <!--
-                    <div ngbDropdown style="float:right">
-                        <button class="btn" ngbDropdownToggle>Status</button>
-                        <div class="dropdown-menu">
-                          <button class="dropdown-item"  >Completed</button>
-                          <button class="dropdown-item"  >Pending </button>
-                          <button class="dropdown-item"  >Overdue</button>
-                        </div>
-                      </div>
-                    </div> -->
-                    <div class="dropdown" style="float:right">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Status
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Completed</a></li>
-                          <li><a href="#">Pending</a></li>
-                          <li><a href="#">Overdue</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                  <!--  <div style="width:60%" > -->
-                    <div class="col-md-6">
-                      <!--
-                        <div ngbDropdown style="float:left">
-                            <button class="btn" ngbDropdownToggle>Service type</button>
-                            <div class="dropdown-menu">
-                              <button class="dropdown-item"  >AA</button>
-                              <button class="dropdown-item"  >POC</button>
-                              <button class="dropdown-item"  >Custom rules</button>
-                            </div>
-                          </div-->
-                          <div class="dropdown">
-                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Severity
-                              <span class="caret"></span></button>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Critical</a></li>
-                                <li><a href="#">High</a></li>
-                                <li><a href="#">Medium</a></li>
-                              </ul>
-                            </div>
-                    </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                      <div class="col-md-12">
-                          <table class="table table-striped">
-                            <tr class="table-header">
-                              <td>Vulnerability</td>
-                              <td>Severity</td>
-                              <td>Request Date</td>
-                              <td>End Date</td>
-                              <td>URL</td>
-                            </tr>
-                            <tr>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                <td>mttp://www.reliance.com</td>
-                            </tr>
-                            <tr>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                <td>mttp://www.reliance.com</td>
-                            </tr>
-                            <tr>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                <td>mttp://www.reliance.com</td>
-                            </tr>
-                            <tr>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                <td>mttp://www.reliance.com</td>
-                            </tr>
-                            <tr>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                <td>mttp://www.reliance.com</td>
-                            </tr>
-                          </table>
-                      </div>
-
-                    </div>
-                </div>
-
-             </div> 
-             
-             
+                    <router-outlet></router-outlet> 
             </ng-template>
+    
           </ngb-tab>
           <ngb-tab  [disabled]="false">
-              <ng-template ngbTabTitle><b>TAS</b> </ng-template>
+                <ng-template ngbTabTitle><a routerLink="/tas"><b>TAS</b></a> </ng-template>
               <ng-template ngbTabContent>
-                <p>This is the content of the reports tab!</p>
-                <ngb-alert [dismissible]="true">
-                  <strong>Warning!</strong> This is an alert!
-                </ngb-alert>
-                
-                <br>
-                <div>
-                    <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar>Completed</p>
-                    <p><ngb-progressbar type="info" [value]="50"></ngb-progressbar>In Progress</p>
-                    <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar>Pending</p>
-                    <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar>Pending after SLA</p>
-                </div>
-
-              </ng-template>
+                    <router-outlet></router-outlet> 
+                </ng-template>
           </ngb-tab>
           <ngb-tab  [disabled]="false">
-              <ng-template ngbTabTitle><b>WAS</b> </ng-template>
-              <ng-template ngbTabContent>
-                <p>This is the content of the reports tab!</p>
-                <ngb-alert [dismissible]="true">
-                  <strong>Warning!</strong> This is an alert!
-                </ngb-alert>
-              </ng-template>
+            <ng-template ngbTabTitle><a routerLink="/was"><b>WAS</b></a> </ng-template>
+                <ng-template ngbTabContent>
+                      <router-outlet></router-outlet> 
+                </ng-template>
           </ngb-tab>
           <ngb-tab  [disabled]="false">
-              <ng-template ngbTabTitle><b>Customer</b> </ng-template>
+                <ng-template ngbTabTitle><a routerLink="/customer"><b>Customer</b></a> </ng-template>
               <ng-template ngbTabContent>
-                <p>This is the content of the reports tab!</p>
-                <ngb-alert [dismissible]="true">
-                  <strong>Warning!</strong> This is an alert!
-                </ngb-alert>
+                    <router-outlet></router-outlet> 
               </ng-template>
           </ngb-tab>
     </ngb-tabset>
