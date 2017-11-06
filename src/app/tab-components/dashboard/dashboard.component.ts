@@ -16,28 +16,34 @@ export class DashboardComponent {
         console.log("this is the constructor");
      //   helloWorld();
         this.callApi();
-        this.callPortalApi();
+     //   this.callPortalApi();
     }
     url:any;
-    ip:any;
+    pendingPoc:any;
+    duetodayPoc:any;
+    overduePoc : any;
+    
+    totalduePoc : any;
     loggedInUser:any;
 
     callApi(){
-        console.log("-------- inside callApi-----------------");
+        
     let url = "http://localhost:8888/test/";
     
         this.http.get(url).map((res: Response) => res.json())
           .subscribe(
           data => {
-              console.log("response aya hai....",data.msg)
-            this.ip= data.msg;
-           
+              console.log("response ...........",data.PendingPOC)
+            this.pendingPoc= data.PendingPOC;
+            this.duetodayPoc= data.duetodayPoc;
+            this.overduePoc= data.overduePoc;
+            this.totalduePoc = this.pendingPoc + this.duetodayPoc + this.overduePoc;
         },
         error=>console.log("error........")
     );
     }
     callPortalApi(){
-        console.log("-------- inside callPortalApi-----------------");
+       
     let url = "http://localhost:8888/test/website";
     
         this.http.get(url).map((res: Response) => res.json())
@@ -55,6 +61,7 @@ export class DashboardComponent {
     }
 
     rediretPoc(){
+              
         this.router.navigate(["/poc"]);
     }
 }

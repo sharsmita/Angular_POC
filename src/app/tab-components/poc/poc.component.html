@@ -1,7 +1,7 @@
 
              <div class="row" style="border-width:2em; border-color:#c9dbec">
                <div class="col-md-12" style="border:1px solid #a7b2d4;display:inline-block" >
-                  <img id="Sla_logo" src="..\..\assets\images\lastscannedclock.png"><b> POC</b>
+                  <img id="Sla_logo" src="..\..\assets\images\lastscannedclock.png"><b> SLA</b>
                   <br>
                </div>
             </div> 
@@ -10,10 +10,10 @@
                     <br>
                     <br>
                       <div class="list-group">
-                        <a href="#" class="list-group-item active">First item</a>
-                        <a href="#" class="list-group-item">Second item</a>
-                        <a href="#" class="list-group-item">Third item</a>
-                        <a href="#" class="list-group-item">Fourth item</a>
+                        <a class="list-group-item active" routerLink="/poc">POC</a>
+                        <a href="#" class="list-group-item">Tickets</a>
+                        <a href="#" class="list-group-item">Custom Rules</a>
+                        
                       </div>
                                                              
                 </div>
@@ -25,7 +25,7 @@
                   <div class="row">
                     <div class="col-md-12">
                        <ol class="breadcrumb">
-                         <li class="active"> <h4 style="color:rgb(167, 178, 212)">POC/First Item</h4></li>        
+                         <li class="active"> <h4 style="color:rgb(167, 178, 212)">SLA/POC</h4></li>        
                        </ol>
                  </div>
                  
@@ -44,7 +44,8 @@
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <div class='input-group date' id='datetimepicker1'>
+                              
+                              <div class='input-group date' id='datetimepicker1' data-provider="datepicker">
                                   <input type='text' class="form-control" style="width:150px;float:right" value="Request Date"/>
                                   <span class="input-group-addon">
                                       <span class="glyphicon glyphicon-calendar"></span>
@@ -113,47 +114,15 @@
                               <td>End Date</td>
                               
                             </tr>
-                            <tr>
-                                <td>RelJIO</td>
-                                <td>mttp://www.reliance.com</td>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                                
-                            </tr>
-                            <tr>
-                                <td>RelJIO</td>
-                                <td>mttp://www.reliance.com</td>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                            </tr>
-                            <tr>
-                                <td>RelJIO</td>
-                                <td>mttp://www.reliance.com</td>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                            </tr>
-                            <tr>
-                                <td>RelJIO</td>
-                                <td>mttp://www.reliance.com</td>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                            </tr>
-                            <tr>
-                                <td>RelJIO</td>
-                                <td>mttp://www.reliance.com</td>
-                                <td>Cross Site Scripting</td>
-                                <td>High</td>
-                                <td>01/01/2017 </td>
-                                <td>10/01/2017</td>
-                            </tr>
+                           
+                        <tr *ngFor="let pocDetails of pocDetailsList">
+                            <td>{{pocDetails.ClientID}}</td>
+                            <td>{{pocDetails.URL_IP}}</td>
+                            <td>{{pocDetails.AlertID}}</td>
+                            <td>{{pocDetails.Status}}</td>
+                            <td>{{pocDetails.RequestDate}}</td>
+                            <td>{{pocDetails.DueDate}}</td>
+                        </tr>
                           </table>
                       </div>
 
