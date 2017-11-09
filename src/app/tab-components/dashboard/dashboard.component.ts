@@ -32,10 +32,10 @@ export class DashboardComponent {
         this.http.get(url).map((res: Response) => res.json())
           .subscribe(
           data => {
-              console.log("response ...........",data.data.PendingPOC)
-            this.pendingPoc= data.data.PendingPOC;
-            this.duetodayPoc= data.data.duetodayPoc;
-            this.overduePoc= data.data.overduePoc;
+              
+            this.pendingPoc= data.data.data.PendingPOC;
+            this.duetodayPoc= data.data.data.DueToday;
+            this.overduePoc= data.data.data.OverDue;
             this.totalduePoc = this.pendingPoc + this.duetodayPoc + this.overduePoc;
         },
         error=>console.log("error........",error)
@@ -52,7 +52,7 @@ export class DashboardComponent {
               console.log("---- portal call working....",JSON.stringify(data));
               console.log("---login id---bis==>>",JSON.stringify(data.data.loggedInUser["loginId"]));
               this.loggedInUser = data.data.loggedInUser["loginId"];
-           // this.loggedInUser= JSON.stringify(data);
+           
            
         },
         error=>console.log("error........")

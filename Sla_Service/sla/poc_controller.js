@@ -28,9 +28,10 @@ router.use(function (req, res, next) {
 
 router.get('/poc', async function (req, res) {
     //intergrate backed API
+    
     var options = {
         method: 'GET',
-       // uri: `${SocAPIEndPoint}/v1/getPocs`,
+       
        uri: 'https://soc.indusguard.com/pocs/PocSummary',
         headers: {
             'accesskey':'6755f1b2a8092579e2dafaaf8a01f985',
@@ -42,10 +43,17 @@ router.get('/poc', async function (req, res) {
         json: true // Automatically parses the JSON string in the response
     }
 
-    //let ret = await Request(options)
-    res= await Request(options)
-    
-     console.log("====== function in service called ======",JSON.stringify(res));
+    let ret = await Request(options)
+    //ret= await Request(options)
+    console.log("====== function in service called ======",JSON.stringify(ret));
+     
+     if(ret){
+     res.json({
+        status: "OK",
+        data: ret
+    })
+    }
+
  })
 
 module.exports = router;
