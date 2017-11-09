@@ -12,9 +12,13 @@ import {PocComponent} from '../app/tab-components/poc/poc.component';
 import {CustomerComponent} from '../app/tab-components/customer/customer.component';
 import { TasComponent } from '../app/tab-components/tas/tas.component';
 import { WasComponent } from '../app/tab-components/was/was.component';
-
+import {DataTableModule } from 'angular-4-data-table-bootstrap-4';
+import {DataTableComponent } from '../app/data-table/data-table.component';
+import {NgbdDatepickerBasic} from '../app/tab-components/poc/datepicker-basic';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { HttpModule } from '@angular/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,14 +30,19 @@ import { HttpModule } from '@angular/http';
     PocComponent,
     CustomerComponent,
     TasComponent,
-    WasComponent
+    WasComponent,
+    DataTableComponent,
+    NgbdDatepickerBasic
   //  MaterialModule.forRoot()
   ],
   
   imports: [
     BrowserModule,NgbModule.forRoot(),
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    DataTableModule,
+    AngularFontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

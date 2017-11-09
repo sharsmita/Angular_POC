@@ -1,4 +1,5 @@
 var express = require('express');
+const Request = require('request-promise-native');
 var router = express.Router();
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -26,13 +27,25 @@ router.use(function (req, res, next) {
 
 
 router.get('/poc', async function (req, res) {
+    //intergrate backed API
+    var options = {
+        method: 'GET',
+       // uri: `${SocAPIEndPoint}/v1/getPocs`,
+       uri: 'https://soc.indusguard.com/pocs/PocSummary',
+        headers: {
+            'accesskey':'6755f1b2a8092579e2dafaaf8a01f985',
+            'secretkey':'d6f64d41dff52c50242c0872198a0a4e'
+        },
+        body: {
+            
+        },
+        json: true // Automatically parses the JSON string in the response
+    }
+
+    //let ret = await Request(options)
+    res= await Request(options)
     
-     res.json({
-         PendingPOC: 100,
-         duetodayPoc : 20,
-         overduePoc : 30
-     })
-     console.log("====== function in service called ======");
+     console.log("====== function in service called ======",JSON.stringify(res));
  })
 
 module.exports = router;

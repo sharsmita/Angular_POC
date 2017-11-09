@@ -5,8 +5,8 @@
                   <br>
                </div>
             </div> 
-            <div class="row" style ="height:400px">
-                <div class="col-md-2" style=" background-color:#f1f4f7;border:1px solid rgb(167, 178, 212);height:400px"  >
+            <div class="row" style="height:100%" >
+                <div class="col-md-2" style=" background-color:#f1f4f7;border:1px solid rgb(167, 178, 212);min-height:700px"  >
                     <br>
                     <br>
                       <div class="list-group">
@@ -22,16 +22,17 @@
                   <span> <h4 style="color:rgb(167, 178, 212)">POC</h4></span>
                   -->
                   <!--bread crumbs-->
+                  <!--
                   <div class="row">
                     <div class="col-md-12">
                        <ol class="breadcrumb">
                          <li class="active"> <h4 style="color:rgb(167, 178, 212)">SLA/POC</h4></li>        
                        </ol>
-                 </div>
-                 
+                    </div>
                  </div> 
-                 <br>
+                -->
                  <div class="row">
+                     <br>
                     <div class="col-md-6">
                       <input type="text" value="CustomerId" style="float:right" />
                     </div>
@@ -43,6 +44,7 @@
                   <br>
                   <div class="row">
                       <div class="col-md-6">
+                          <!--
                           <div class="form-group">
                               
                               <div class='input-group date' id='datetimepicker1' data-provider="datepicker">
@@ -57,7 +59,15 @@
                         $(function () {
                             $('#datetimepicker1').datetimepicker();
                         });
-                    </script>
+                    </script> 
+                -->
+                <div class="col-md-3"></div>
+                    <div class="col-md-3" style="height:200px;width:200px;float:right ">
+                    <ngbd-datepicker-basic>
+                        <input ng-model="date"/>
+                    </ngbd-datepicker-basic>
+                    </div>
+                </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class='input-group date' id='datetimepicker2'>
@@ -102,8 +112,10 @@
                     </div>
                     </div>
                     <br>
-                    <div class="row">
+                    <div class="row" style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+                        <!--
                       <div class="col-md-12">
+                          
                           <table class="table table-striped">
                             <tr class="table-header">
                               <td>CustomerId</td>
@@ -124,8 +136,9 @@
                             <td>{{pocDetails.DueDate}}</td>
                         </tr>
                           </table>
-                      </div>
-
+                        -->
+                        <data-table-1></data-table-1>
+                       
                     </div>
                 </div>
 

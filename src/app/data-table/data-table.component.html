@@ -1,0 +1,50 @@
+<data-table id="persons-grid"
+headerTitle="POC Details"
+[items]="items"
+[itemCount]="itemCount"
+(reload)="reloadItems($event)"
+
+(rowClick)="rowClick($event)"
+(rowDoubleClick)="rowDoubleClick($event)"
+[rowTooltip]="rowTooltip"
+>
+<data-table-column
+    [property]="'CustomerId'"
+    [header]="'CustomerId'"
+    [sortable]="true"
+    [resizable]="true">
+</data-table-column>
+<data-table-column
+    [property]="'URL'"
+    [header]="'URL'">
+    
+</data-table-column>
+<data-table-column
+    property="Vulnerability"
+    header="Vulnerability"
+    >
+</data-table-column>
+<data-table-column
+    [property]="'Severity'"
+    [header]="'Severity'"
+    [visible]="true">
+</data-table-column>
+<data-table-column
+    [property]="'RequestDate'"
+    [header]="'Request Date'"
+    [visible]="true"
+    [sortable]="true">
+    <template #dataTableCell let-item="item">
+            <span>{{item.RequestDate | date:'yyyy-MM-dd'}}</span>
+    </template>
+</data-table-column>
+<data-table-column
+    [property]="'EndDate'"
+    [header]="'End Date'"
+    [visible]="true"
+    [sortable]="true">
+    <template #dataTableCell let-item="item">
+            <span>{{item.RequestDate | date:'yyyy-MM-dd'}}</span>
+    </template>
+</data-table-column>
+</data-table>

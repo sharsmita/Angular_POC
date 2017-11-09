@@ -14,9 +14,8 @@ export class DashboardComponent {
     constructor(private http: Http,private router: Router) 
     {
         console.log("this is the constructor");
-     //   helloWorld();
         this.callApi();
-     //   this.callPortalApi();
+     
     }
     url:any;
     pendingPoc:any;
@@ -28,20 +27,21 @@ export class DashboardComponent {
 
     callApi(){
         
-    let url = "http://localhost:8888/test/";
+    let url = "http://localhost:8888/sla/poc";
     
         this.http.get(url).map((res: Response) => res.json())
           .subscribe(
           data => {
-              console.log("response ...........",data.PendingPOC)
-            this.pendingPoc= data.PendingPOC;
-            this.duetodayPoc= data.duetodayPoc;
-            this.overduePoc= data.overduePoc;
+              console.log("response ...........",data.data.PendingPOC)
+            this.pendingPoc= data.data.PendingPOC;
+            this.duetodayPoc= data.data.duetodayPoc;
+            this.overduePoc= data.data.overduePoc;
             this.totalduePoc = this.pendingPoc + this.duetodayPoc + this.overduePoc;
         },
-        error=>console.log("error........")
+        error=>console.log("error........",error)
     );
     }
+
     callPortalApi(){
        
     let url = "http://localhost:8888/test/website";
