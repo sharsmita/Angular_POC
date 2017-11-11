@@ -41,7 +41,7 @@ export class DashboardComponent {
         error=>console.log("error........",error)
     );
     }
-
+    /*
     callPortalApi(){
        
     let url = "http://localhost:8888/test/website";
@@ -58,7 +58,7 @@ export class DashboardComponent {
         error=>console.log("error........")
     
     );
-    }
+    } */
 
     rediretPoc(){
               

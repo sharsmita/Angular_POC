@@ -9,16 +9,23 @@ headerTitle="POC Details"
 [rowTooltip]="rowTooltip"
 >
 <data-table-column
-    [property]="'CustomerId'"
+    [property]="'PocID'"
+    [header]="'PoCId'"
+    [sortable]="true"
+    [resizable]="true">
+</data-table-column>
+<data-table-column
+    [property]="'ClientID'"
     [header]="'CustomerId'"
     [sortable]="true"
     [resizable]="true">
 </data-table-column>
 <data-table-column
-    [property]="'URL'"
+    [property]="'URL_IP'"
     [header]="'URL'">
     
 </data-table-column>
+<!--
 <data-table-column
     property="Vulnerability"
     header="Vulnerability"
@@ -28,23 +35,25 @@ headerTitle="POC Details"
     [property]="'Severity'"
     [header]="'Severity'"
     [visible]="true">
+
 </data-table-column>
+-->
 <data-table-column
     [property]="'RequestDate'"
     [header]="'Request Date'"
     [visible]="true"
     [sortable]="true">
-    <template #dataTableCell let-item="item">
+    <ng-template #dataTableCell let-item="item">
             <span>{{item.RequestDate | date:'yyyy-MM-dd'}}</span>
-    </template>
+    </ng-template>
 </data-table-column>
 <data-table-column
-    [property]="'EndDate'"
+    [property]="'DueDate'"
     [header]="'End Date'"
     [visible]="true"
     [sortable]="true">
-    <template #dataTableCell let-item="item">
+    <ng-template #dataTableCell let-item="item">
             <span>{{item.RequestDate | date:'yyyy-MM-dd'}}</span>
-    </template>
+    </ng-template>
 </data-table-column>
 </data-table>
